@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实践舱详情 · 孙嘉麾</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+    <a class="nav-brand" href="index.html#page1">孙嘉麾<span>.</span></a>
+    <div class="nav-menu">
+        <a class="nav-link" href="index.html#page1">首页</a>
+        <a class="nav-link" href="index.html#page2">能力卡片</a>
+        <a class="nav-link" href="index.html#page5">自我介绍</a>
+        <a class="nav-link" href="honors.html">荣誉墙</a>
+        <a class="nav-link active" href="practice.html">实践舱</a>
+    </div>
+</nav>
+
+<main>
+
+<header class="sub-hero">
+    <div class="wrap">
+        <p class="eyebrow">PRACTICE</p>
+        <h1>实践舱<em>详情</em></h1>
+        <p>与主站第 4 页的双栏并列不同，这里改用一条竖向时间轴：先玩到东西，再看它是怎么做出来的。</p>
+        <a class="back-link" href="index.html#page4">← 返回主站实践舱</a>
+    </div>
+</header>
+
+<!-- =========================================================================
+     竖向时间轴：项目组件在上，对应 PPT 堆叠紧跟正下方
+     iframe 试玩窗口 480×320（移动端 100% 宽 × 240px 高），均带 sandbox
+     PPT 使用全部图片：坦克大战 ppt-tank1~11、番茄钟 f1~f5
+     ========================================================================= -->
+<section class="sub-section">
+    <div class="wrap">
+        <div class="timeline">
+
+            <!-- ========== 节点 01：坦克大战 ========== -->
+            <div class="tl-node">
+                <p class="tl-step">PRACTICE 01</p>
+                <h2 class="tl-title">经典2D网页游戏复刻：坦克大战</h2>
+                <p class="tl-desc">通过复刻经典游戏，进一步锻炼与 AI 大模型结对编程的能力。针对游戏中的网格系统与基础碰撞检测，通过向 AI 工具精准描述需求，逐步调试并修复代码 Bug，实现核心游戏机制；掌握了 Web 端基础的 DOM 操作与事件监听原理，积累了项目排错经验。</p>
+
+                <div class="play-frame">
+                    <iframe src="https://1302184.github.io/tank-games/"
+                            sandbox="allow-scripts allow-same-origin"
+                            title="坦克大战试玩"></iframe>
+                    <p class="preview-cap">坦克大战 · 内嵌试玩</p>
+                </div>
+
+                <p style="margin-top:22px">
+                    <a class="text-link" href="https://1302184.github.io/tank-games/" target="_blank" rel="noopener">全屏访问项目 ↗</a>
+                </p>
+
+                <!-- 🔴 对应 PPT 堆叠：11 张 -->
+                <div class="ppt-stack-wrap">
+                    <p class="ppt-stack-label">PROJECT DECK · 11 PAGES</p>
+                    <div class="ppt-stack" data-group="sub-tank">
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank1.jpg"  alt="坦克大战 PPT 第1页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank2.jpg"  alt="坦克大战 PPT 第2页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank3.jpg"  alt="坦克大战 PPT 第3页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank4.jpg"  alt="坦克大战 PPT 第4页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank5.jpg"  alt="坦克大战 PPT 第5页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank6.jpg"  alt="坦克大战 PPT 第6页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank7.jpg"  alt="坦克大战 PPT 第7页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank8.jpg"  alt="坦克大战 PPT 第8页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank9.jpg"  alt="坦克大战 PPT 第9页"  width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank10.jpg" alt="坦克大战 PPT 第10页" width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank11.jpg" alt="坦克大战 PPT 第11页" width="464" height="304"></div>
+                    </div>
+                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头可翻遍 11 页</p>
+                </div>
+            </div>
+
+            <!-- ========== 节点 02：番茄钟 ========== -->
+            <div class="tl-node">
+                <p class="tl-step">PRACTICE 02</p>
+                <h2 class="tl-title">沉浸式时间管理工具：番茄钟Web应用</h2>
+                <p class="tl-desc">针对日常学习中的专注力管理需求，从零开始设计并部署一款极简版网页番茄钟。在缺乏深厚编程基础的情况下，运用大模型 AI 工具辅助生成前端代码（HTML/CSS/JS），理解并跑通了倒计时逻辑与页面交互；独立完成代码托管，并成功使用 GitHub Pages 实现项目的自动化部署与公网访问，建立了个人的首个完整开发链路认知。</p>
+
+                <div class="play-frame">
+                    <iframe src="https://1302184.github.io/-fanqiezhong/"
+                            sandbox="allow-scripts allow-same-origin"
+                            title="番茄钟试玩"></iframe>
+                    <p class="preview-cap">番茄钟 · 内嵌试玩</p>
+                </div>
+
+                <p style="margin-top:22px">
+                    <a class="text-link" href="https://1302184.github.io/-fanqiezhong/" target="_blank" rel="noopener">全屏访问项目 ↗</a>
+                </p>
+
+                <!-- 🔴 对应 PPT 堆叠：5 张 -->
+                <div class="ppt-stack-wrap">
+                    <p class="ppt-stack-label">PROJECT DECK · 5 PAGES</p>
+                    <div class="ppt-stack" data-group="sub-tomato">
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f1.jpg" alt="番茄钟 PPT 第1页" width="464" height="304"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f2.jpg" alt="番茄钟 PPT 第2页" width="464" height="304"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f3.jpg" alt="番茄钟 PPT 第3页" width="464" height="304"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f4.jpg" alt="番茄钟 PPT 第4页" width="464" height="304"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f5.jpg" alt="番茄钟 PPT 第5页" width="464" height="304"></div>
+                    </div>
+                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头翻页</p>
+                </div>
+            </div>
+
+            <!-- ========== 节点 03：认证实践项目 ========== -->
+            <div class="tl-node">
+                <p class="tl-step">PRACTICE 03</p>
+                <h2 class="tl-title">AI智能体与RAG应用构建实操</h2>
+                <p class="tl-desc">依托阿里云百炼平台与科大讯飞平台，完成基于特定文档的 RAG 应用实验，理解向量数据库与检索召回的基本原理；实践操作大模型微调流程，编写并优化结构化 Prompt，使智能体能够在限定场景下输出更符合要求的回答；使用 PAI ArtLab 及 VISION 设计平台完成初步的 AI 图像生成与视觉设计实验。</p>
+                <p><a class="sticker-btn" href="honors.html">查看对应认证 →</a></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="sub-section" style="text-align:center">
+    <div class="wrap">
+        <h2 class="sec-title">还在做，<em>还会更多</em></h2>
+        <p style="margin-top:30px"><a class="sticker-btn" href="index.html#page1">回到首页 →</a></p>
+    </div>
+</section>
+
+</main>
+
+<div class="lightbox" id="lightbox">
+    <button type="button" class="lb-btn lb-prev" aria-label="上一张">‹</button>
+    <img id="lightbox-img" src="" alt="">
+    <button type="button" class="lb-btn lb-next" aria-label="下一张">›</button>
+    <button type="button" class="lb-btn lb-close" aria-label="关闭">×</button>
+    <div class="lb-meta">
+        <p class="lb-cap" id="lightbox-cap"></p>
+        <p class="lb-index" id="lightbox-index"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

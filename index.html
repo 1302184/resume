@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孙嘉麾 · 个人作品集</title>
+<meta name="description" content="孙嘉麾 · 集美大学水生动物医学 · AI 应用实践与作品集">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================================================================
+     开场封面页
+     cover-bg.jpg 已包含全部文字，代码只铺满全屏，不再写任何文案。
+     2.2 秒后自动淡出；点击任意位置或按任意键立即跳过。
+     ========================================================================= -->
+<div id="cover">
+    <p class="cover-skip">点击任意处继续</p>
+</div>
+
+<!-- =========================================================================
+     顶部导航（5 个入口）
+     ========================================================================= -->
+<nav class="nav">
+    <a class="nav-brand" href="#page1">孙嘉麾<span>.</span></a>
+    <div class="nav-menu">
+        <a class="nav-link" href="#page1" data-target="page1">首页</a>
+        <a class="nav-link" href="#page2" data-target="page2">能力卡片</a>
+        <a class="nav-link" href="#page5" data-target="page5">自我介绍</a>
+        <a class="nav-link" href="honors.html">荣誉墙</a>
+        <a class="nav-link" href="practice.html">实践舱</a>
+    </div>
+</nav>
+
+<main>
+
+<!-- =========================================================================
+     第 1 页｜首页
+     🔴 高难度模块 1：头像 head-full.png 放大作视觉主体，
+     三个 3D 图标只分布在照片「头部上半部」（top 4%/12%/22%，底边不越过中线），
+     照片 z-index:3 压住每个图标 15%~25%，且 pointer-events:none 保证图标全可点。
+     图标做了饱和度/对比度提升、投影与浅蜜桃粉光晕，像三颗立体徽章浮在照片上。
+     ========================================================================= -->
+<section class="screen" id="page1">
+    <div class="wrap hero-grid">
+
+        <!-- 左：文字整体左移 -->
+        <div class="hero-text">
+            <p class="eyebrow">PORTFOLIO</p>
+            <h1 class="hero-name">
+                孙嘉麾
+                <span class="hero-role">水生动物医学</span>
+            </h1>
+
+            <p class="hero-major">
+                集美大学 | 水产学院 | 本科（大一）<br>
+                掌握扎实的理科逻辑与生命科学基础，对人工智能交叉应用充满热情。
+            </p>
+
+            <!-- 三个标签：纯展示，无链接、无点击 -->
+            <div class="tag-row">
+                <span class="tag">📊 PPT输出</span>
+                <span class="tag">🤖 AI编程</span>
+                <span class="tag">🚀 执行力强</span>
+            </div>
+
+            <!-- 联系方式：点击一键复制 -->
+            <div class="contact-row">
+                <button type="button" class="contact-btn" data-copy="13021842028">
+                    <span class="c-label">电话 13021842028</span>
+                </button>
+                <button type="button" class="contact-btn" data-copy="sunjiahui0313@qq.com">
+                    <span class="c-label">邮箱 sunjiahui0313@qq.com</span>
+                </button>
+                <button type="button" class="contact-btn" data-copy="sun1302184">
+                    <span class="c-label">微信 sun1302184</span>
+                </button>
+                <button type="button" class="contact-btn" data-copy="https://github.com/1302184">
+                    <span class="c-label">GitHub 1302184</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 右：头像 + 三个 3D 图标 -->
+        <div class="head-stage">
+            <!-- 图标 1 → 主站第 5 页 -->
+            <a class="head-icon icon-1" href="#page5">
+                <span class="icon-tip">自我介绍</span>
+                <img src="item1.png" alt="自我介绍" width="232" height="232">
+            </a>
+            <!-- 图标 2 → honors.html -->
+            <a class="head-icon icon-2" href="honors.html">
+                <span class="icon-tip">荣誉墙</span>
+                <img src="item2.png" alt="荣誉墙" width="232" height="232">
+            </a>
+            <!-- 图标 3 → practice.html -->
+            <a class="head-icon icon-3" href="practice.html">
+                <span class="icon-tip">实践舱</span>
+                <img src="item3.png" alt="实践舱" width="232" height="232">
+            </a>
+
+            <!-- 照片：z-index:3 压在图标之上，pointer-events:none 不拦截点击 -->
+            <img class="head-photo" src="head-full.png" alt="孙嘉麾" width="640" height="800">
+        </div>
+
+    </div>
+
+    <div class="scroll-hint">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg>
+        <span>SCROLL</span>
+    </div>
+
+    <span class="folio">01</span>
+</section>
+
+<!-- =========================================================================
+     第 2 页｜能力卡片页
+     顶部座右铭（无页面标题），下行相对上行错开两个字符
+     卡片图标统一使用 emoji
+     ========================================================================= -->
+<section class="screen" id="page2">
+    <div class="wrap" style="position:relative">
+        <h2 class="motto">
+            <span class="m1">常怀不足</span>
+            <span class="m2">日日进步</span>
+        </h2>
+
+        <div class="ability-list">
+            <div class="ability-row">
+                <div class="ability-icon">📊</div>
+                <div>
+                    <h3 class="ability-t">结构化PPT输出</h3>
+                    <p class="ability-d">擅长把长篇资料快速转化为清晰的展示文档</p>
+                </div>
+            </div>
+
+            <div class="ability-row">
+                <div class="ability-icon">🤖</div>
+                <div>
+                    <h3 class="ability-t">AI驱动开发</h3>
+                    <p class="ability-d">熟练用 AI 工具写代码、调 Bug，10+ 项 AI 认证</p>
+                </div>
+            </div>
+
+            <div class="ability-row">
+                <div class="ability-icon">🚀</div>
+                <div>
+                    <h3 class="ability-t">执行力强</h3>
+                    <p class="ability-d">独立完成从代码到部署的全流程，两个网页作品公网可访问</p>
+                </div>
+            </div>
+        </div>
+
+        <img class="deco-p2" src="item7.png" alt="" aria-hidden="true" width="168" height="168">
+    </div>
+
+    <span class="folio">02</span>
+</section>
+
+<!-- =========================================================================
+     第 3 页｜实践舱前置文字页
+     主体文字放大到接近屏幕 1/2，浅蜜桃粉居中
+     sj1~sj4 每张宽 280~350px，错落摆放、轻微重叠，均可点击弹窗放大并左右切换
+     ========================================================================= -->
+<section class="screen lead-screen" id="page3">
+    <div class="wrap lead-inner">
+        <p class="lead-main">不局限书本认知，<br>希望通过实践收获经验</p>
+        <p class="lead-note">大一阶段目前专注于专业基础学习与AI技术前沿探索，计划近期积极寻找校内外实践与比赛机会</p>
+
+        <div class="sj-row">
+            <img class="sj sj-1" src="sj1.png" alt="实践记录 1" width="330" height="230" data-lb-group="sj" data-lb-cap="实践记录 · sj1">
+            <img class="sj sj-2" src="sj2.png" alt="实践记录 2" width="330" height="230" data-lb-group="sj" data-lb-cap="实践记录 · sj2">
+            <img class="sj sj-3" src="sj3.png" alt="实践记录 3" width="330" height="230" data-lb-group="sj" data-lb-cap="实践记录 · sj3">
+            <img class="sj sj-4" src="sj4.png" alt="实践记录 4" width="330" height="230" data-lb-group="sj" data-lb-cap="实践记录 · sj4">
+        </div>
+    </div>
+
+    <span class="folio">03</span>
+</section>
+
+<!-- =========================================================================
+     第 4 页｜实践舱 · 项目展示页
+     游戏预览窗口 → 正下方代码介绍 → 再下方 🔴 PPT 照片堆叠（480×320）
+     主站取番茄钟 f1~f3、坦克大战 ppt-tank1~3
+     ========================================================================= -->
+<section class="screen" id="page4">
+    <div class="wrap">
+        <div class="sec-head">
+            <div>
+                <p class="eyebrow">PRACTICE</p>
+                <h2 class="sec-title">实践<em>舱</em></h2>
+                <p class="sec-sub">两个从零做出来的可玩网页，窗口里能直接试，也能点开全屏访问。</p>
+            </div>
+            <a class="sticker-btn" href="practice.html">实践舱详情 →</a>
+        </div>
+
+        <div class="practice-grid">
+
+            <!-- ===== 项目一：坦克大战 ===== -->
+            <div class="practice-unit">
+                <div class="preview-frame">
+                    <iframe src="https://1302184.github.io/tank-games/"
+                            sandbox="allow-scripts allow-same-origin"
+                            title="坦克大战预览"></iframe>
+                    <p class="preview-cap">坦克大战 · 网页预览</p>
+                </div>
+
+                <div class="code-note">
+                    <h3>经典2D网页游戏复刻：坦克大战</h3>
+                    <p>通过复刻经典游戏，进一步锻炼与 AI 大模型结对编程的能力。针对网格系统与基础碰撞检测，向 AI 工具精准描述需求，逐步调试并修复代码 Bug，实现核心游戏机制；掌握了 Web 端基础的 DOM 操作与事件监听原理。</p>
+                    <a class="text-link" href="https://1302184.github.io/tank-games/" target="_blank" rel="noopener">全屏访问项目 ↗</a>
+                </div>
+
+                <!-- 🔴 PPT 堆叠：坦克大战 3 张 -->
+                <div class="ppt-stack-wrap">
+                    <p class="ppt-stack-label">PROJECT DECK</p>
+                    <div class="ppt-stack" data-group="p4-tank">
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT">
+                            <img src="ppt-tank1.jpg" alt="坦克大战 PPT 第1页" width="464" height="304">
+                        </div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT">
+                            <img src="ppt-tank2.jpg" alt="坦克大战 PPT 第2页" width="464" height="304">
+                        </div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT">
+                            <img src="ppt-tank3.jpg" alt="坦克大战 PPT 第3页" width="464" height="304">
+                        </div>
+                    </div>
+                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头翻页</p>
+                </div>
+            </div>
+
+            <!-- ===== 项目二：番茄钟 ===== -->
+            <div class="practice-unit">
+                <div class="preview-frame">
+                    <iframe src="https://1302184.github.io/-fanqiezhong/"
+                            sandbox="allow-scripts allow-same-origin"
+                            title="番茄钟预览"></iframe>
+                    <p class="preview-cap">番茄钟 · 网页预览</p>
+                </div>
+
+                <div class="code-note">
+                    <h3>沉浸式时间管理工具：番茄钟Web应用</h3>
+                    <p>针对日常学习中的专注力管理需求，从零开始设计并部署一款极简版网页番茄钟。运用大模型 AI 工具辅助生成前端代码（HTML/CSS/JS），理解并跑通了倒计时逻辑与页面交互；独立完成代码托管，并成功使用 GitHub Pages 实现自动化部署与公网访问。</p>
+                    <a class="text-link" href="https://1302184.github.io/-fanqiezhong/" target="_blank" rel="noopener">全屏访问项目 ↗</a>
+                </div>
+
+                <!-- 🔴 PPT 堆叠：番茄钟 3 张 -->
+                <div class="ppt-stack-wrap">
+                    <p class="ppt-stack-label">PROJECT DECK</p>
+                    <div class="ppt-stack" data-group="p4-tomato">
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT">
+                            <img src="f1.jpg" alt="番茄钟 PPT 第1页" width="464" height="304">
+                        </div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT">
+                            <img src="f2.jpg" alt="番茄钟 PPT 第2页" width="464" height="304">
+                        </div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT">
+                            <img src="f3.jpg" alt="番茄钟 PPT 第3页" width="464" height="304">
+                        </div>
+                    </div>
+                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头翻页</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <span class="folio">04</span>
+</section>
+
+<!-- =========================================================================
+     第 5 页｜自我介绍页（重新排版：加入兴趣爱好、强化杂志拼贴感）
+     ========================================================================= -->
+<section class="screen" id="page5">
+    <!-- 增加内层包裹并垂直居中 -->
+    <div class="wrap about-wrap">
+        <div class="sec-head about-head">
+            <div>
+                <p class="eyebrow">ABOUT</p>
+                <h2 class="sec-title">自我<em>介绍</em></h2>
+            </div>
+        </div>
+
+        <!-- 第一区：教育背景卡片 (左右不对称布局) -->
+        <div class="edu-card torn-edge">
+            <div class="edu-left">
+                <p class="edu-head">集美大学 | 水产学院<br>水生动物医学 | 本科（大一）</p>
+            </div>
+            <div class="edu-right">
+                <p class="edu-line"><strong>专业背景：</strong>掌握扎实的理科逻辑与生命科学基础，具备严谨的学习态度与实验精神。</p>
+                <p class="edu-line"><strong>发展规划：</strong>对人工智能交叉应用充满热情，正积极筹备并计划参与大学阶段的创新创业竞赛，期望探索AI技术在传统水产或相关领域的落地可能。</p>
+            </div>
+        </div>
+
+        <!-- 第二区：三个能力卡片 -->
+        <div class="intro-grid">
+            <article class="paper-card">
+                <div class="intro-ico">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"></path>
+                        <path d="M14 3l5 5v4"></path><path d="M14 3v5h5"></path>
+                        <path d="M20.5 14.5l-4.6 4.6-2.4.6.6-2.4 4.6-4.6a1.3 1.3 0 0 1 1.8 1.8z"></path>
+                    </svg>
+                </div>
+                <h3 class="intro-t">文字内容生产</h3>
+                <p class="intro-p">具备良好的文字语感与信息提炼能力，能够高效阅读长篇资料并转化为结构化的PPT展示或总结性文档。</p>
+            </article>
+
+            <article class="paper-card">
+                <div class="intro-ico">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                        <path d="M4 10.5h13"></path>
+                        <path d="M10.5 4c1.8 2 2.7 4.2 2.7 6.5s-.9 4.5-2.7 6.5c-1.8-2-2.7-4.2-2.7-6.5S8.7 6 10.5 4z"></path>
+                        <path d="M15.6 15.6L21 21"></path>
+                    </svg>
+                </div>
+                <h3 class="intro-t">跨语种信息检索</h3>
+                <p class="intro-p">具备英文技术文档的阅读基础，能结合AI翻译工具快速获取、筛选并应用开源社区的技术资讯。</p>
+            </article>
+
+            <article class="paper-card">
+                <div class="intro-ico">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 9v6M6 7v10M18 7v10M21 9v6"></path>
+                        <path d="M6 12h3l1.6-3 2.4 6 1.5-3H18"></path>
+                    </svg>
+                </div>
+                <h3 class="intro-t">高能体能管理与情绪价值</h3>
+                <p class="intro-p">坚持系统的体育锻炼，具备极佳的抗压能力；MBTI为ISFJ，情绪内核稳定，慢热真诚，能在团队中提供可靠支撑与良好氛围。</p>
+            </article>
+        </div>
+
+        <!-- 第三区：兴趣爱好 -->
+        <div class="hobbies-zone">
+            <h3 class="hobbies-title">兴趣爱好</h3>
+            <div class="hobbies-tags">
+                <span class="h-tag t1">🏃 健身跑步</span>
+                <span class="h-tag t2">🏸 羽毛球</span>
+                <span class="h-tag t3">📚 阅读写作</span>
+                <span class="h-tag t4">🎵 音乐</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第四区：底部留白与左下角页码 -->
+    <span class="folio folio-left">05</span>
+</section>
+
+<!-- =========================================================================
+     第 6 页｜荣誉墙
+     16 张证书两行：第一行右→左，第二行左→右，各复制一份实现无缝循环
+     点击弹窗放大，大图直接使用被点击证书已加载的 src
+     ========================================================================= -->
+<section class="screen" id="page6">
+    <div class="wrap">
+        <div class="sec-head">
+            <div>
+                <p class="eyebrow">HONORS</p>
+                <h2 class="sec-title">荣誉<em>墙</em></h2>
+                <p class="sec-sub">16 张人工智能方向认证。鼠标悬停暂停流动，点击任意一张看大图。</p>
+            </div>
+            <a class="sticker-btn" href="honors.html">荣誉墙详情 →</a>
+        </div>
+    </div>
+
+    <div class="cert-wall">
+
+        <!-- ===== 第一行：右 → 左 ===== -->
+        <div class="cert-track">
+            <div class="cert-run to-left">
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里达摩院 · 高级AI训练师证书">
+                    <img src="13.jpg" alt="高级AI训练师" width="200" height="150">
+                    <p class="cert-name">高级AI训练师</p><p class="cert-desc">能把业务需求变成模型的训练目标</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里达摩院 · 初级AI训练师证书">
+                    <img src="1.jpg" alt="初级AI训练师" width="200" height="150">
+                    <p class="cert-name">初级AI训练师</p><p class="cert-desc">懂AI训练全流程，能配合团队推进</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · Prompt 工程师认证">
+                    <img src="11.jpg" alt="Prompt工程师" width="200" height="150">
+                    <p class="cert-name">Prompt 工程师</p><p class="cert-desc">会写让AI稳定输出的提示词</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · 智能体工程师认证">
+                    <img src="15.jpg" alt="智能体工程师" width="200" height="150">
+                    <p class="cert-name">智能体工程师</p><p class="cert-desc">能搭建自己跑完多步任务的智能体</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · 微调工程师认证">
+                    <img src="9.jpg" alt="微调工程师" width="200" height="150">
+                    <p class="cert-name">微调工程师</p><p class="cert-desc">能把通用模型调得更贴合具体场景</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · RAG 工程师认证">
+                    <img src="14.jpg" alt="RAG工程师" width="200" height="150">
+                    <p class="cert-name">RAG 工程师</p><p class="cert-desc">让AI基于真实资料回答，少编造</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="玻尔「AI4S Cup - Python 基础能力认证」">
+                    <img src="16.jpg" alt="Python基础能力认证" width="200" height="150">
+                    <p class="cert-name">Python 基础能力</p><p class="cert-desc">能写脚本处理实验数据</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="华为人工智能初识微认证">
+                    <img src="12.jpg" alt="华为AI初识微认证" width="200" height="150">
+                    <p class="cert-name">华为AI初识</p><p class="cert-desc">熟悉另一套主流AI技术生态</p>
+                </figure>
+                <!-- —— 无缝循环复制份（弹窗按 src 去重，不会重复计数） —— -->
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里达摩院 · 高级AI训练师证书">
+                    <img src="13.jpg" alt="高级AI训练师" width="200" height="150"><p class="cert-name">高级AI训练师</p><p class="cert-desc">能把业务需求变成模型的训练目标</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里达摩院 · 初级AI训练师证书">
+                    <img src="1.jpg" alt="初级AI训练师" width="200" height="150"><p class="cert-name">初级AI训练师</p><p class="cert-desc">懂AI训练全流程，能配合团队推进</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · Prompt 工程师认证">
+                    <img src="11.jpg" alt="Prompt工程师" width="200" height="150"><p class="cert-name">Prompt 工程师</p><p class="cert-desc">会写让AI稳定输出的提示词</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · 智能体工程师认证">
+                    <img src="15.jpg" alt="智能体工程师" width="200" height="150"><p class="cert-name">智能体工程师</p><p class="cert-desc">能搭建自己跑完多步任务的智能体</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · 微调工程师认证">
+                    <img src="9.jpg" alt="微调工程师" width="200" height="150"><p class="cert-name">微调工程师</p><p class="cert-desc">能把通用模型调得更贴合具体场景</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="科大讯飞 · RAG 工程师认证">
+                    <img src="14.jpg" alt="RAG工程师" width="200" height="150"><p class="cert-name">RAG 工程师</p><p class="cert-desc">让AI基于真实资料回答，少编造</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="玻尔「AI4S Cup - Python 基础能力认证」">
+                    <img src="16.jpg" alt="Python基础能力认证" width="200" height="150"><p class="cert-name">Python 基础能力</p><p class="cert-desc">能写脚本处理实验数据</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="华为人工智能初识微认证">
+                    <img src="12.jpg" alt="华为AI初识微认证" width="200" height="150"><p class="cert-name">华为AI初识</p><p class="cert-desc">熟悉另一套主流AI技术生态</p>
+                </figure>
+            </div>
+        </div>
+
+        <!-- ===== 第二行：左 → 右 ===== -->
+        <div class="cert-track">
+            <div class="cert-run to-right">
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于百炼平台构建智能体应用">
+                    <img src="5.jpg" alt="百炼智能体" width="200" height="150">
+                    <p class="cert-name">百炼智能体</p><p class="cert-desc">能在百炼平台配好可用的智能体</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于通义灵码实现高效 AI 编码实践">
+                    <img src="3.jpg" alt="通义灵码高效编码" width="200" height="150">
+                    <p class="cert-name">通义灵码编码</p><p class="cert-desc">用AI助手写代码、查Bug更快</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · RAG 应用构建及优化">
+                    <img src="17.jpg" alt="RAG应用构建及优化" width="200" height="150">
+                    <p class="cert-name">RAG 构建优化</p><p class="cert-desc">能找出答不准的原因并逐项改进</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 利用大模型提升内容生产能力">
+                    <img src="8.jpg" alt="大模型内容生产" width="200" height="150">
+                    <p class="cert-name">大模型内容生产</p><p class="cert-desc">长资料快速转成文档和PPT</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · Spring AI 应用开发（入门）">
+                    <img src="4.jpg" alt="Spring AI 入门" width="200" height="150">
+                    <p class="cert-name">Spring AI 入门</p><p class="cert-desc">看得懂大模型应用的后端链路</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于 PAI ArtLab 的 AIGC 设计">
+                    <img src="2.jpg" alt="PAI ArtLab AIGC设计" width="200" height="150">
+                    <p class="cert-name">ArtLab AIGC 设计</p><p class="cert-desc">能自己产出可用的视觉素材</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · VISION 人工智能设计（进阶）">
+                    <img src="10.jpg" alt="VISION 进阶" width="200" height="150">
+                    <p class="cert-name">VISION 进阶</p><p class="cert-desc">能把视觉模型接进具体流程</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · VISION 人工智能设计（入门）">
+                    <img src="6.jpg" alt="VISION 入门" width="200" height="150">
+                    <p class="cert-name">VISION 入门</p><p class="cert-desc">清楚视觉AI适合与不适合的场景</p>
+                </figure>
+                <!-- —— 无缝循环复制份 —— -->
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于百炼平台构建智能体应用">
+                    <img src="5.jpg" alt="百炼智能体" width="200" height="150"><p class="cert-name">百炼智能体</p><p class="cert-desc">能在百炼平台配好可用的智能体</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于通义灵码实现高效 AI 编码实践">
+                    <img src="3.jpg" alt="通义灵码高效编码" width="200" height="150"><p class="cert-name">通义灵码编码</p><p class="cert-desc">用AI助手写代码、查Bug更快</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · RAG 应用构建及优化">
+                    <img src="17.jpg" alt="RAG应用构建及优化" width="200" height="150"><p class="cert-name">RAG 构建优化</p><p class="cert-desc">能找出答不准的原因并逐项改进</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 利用大模型提升内容生产能力">
+                    <img src="8.jpg" alt="大模型内容生产" width="200" height="150"><p class="cert-name">大模型内容生产</p><p class="cert-desc">长资料快速转成文档和PPT</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · Spring AI 应用开发（入门）">
+                    <img src="4.jpg" alt="Spring AI 入门" width="200" height="150"><p class="cert-name">Spring AI 入门</p><p class="cert-desc">看得懂大模型应用的后端链路</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · 基于 PAI ArtLab 的 AIGC 设计">
+                    <img src="2.jpg" alt="PAI ArtLab AIGC设计" width="200" height="150"><p class="cert-name">ArtLab AIGC 设计</p><p class="cert-desc">能自己产出可用的视觉素材</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · VISION 人工智能设计（进阶）">
+                    <img src="10.jpg" alt="VISION 进阶" width="200" height="150"><p class="cert-name">VISION 进阶</p><p class="cert-desc">能把视觉模型接进具体流程</p>
+                </figure>
+                <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里云 Clouder · VISION 人工智能设计（入门）">
+                    <img src="6.jpg" alt="VISION 入门" width="200" height="150"><p class="cert-name">VISION 入门</p><p class="cert-desc">清楚视觉AI适合与不适合的场景</p>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+
+    <span class="folio">06</span>
+</section>
+
+<!-- =========================================================================
+     第 7 页｜特别鸣谢
+     左照片 + 右文字，整体占视口 88% 宽、约 76% 高，垂直居中
+     主图高 60vh，倾斜 -7°，不规则撕纸毛边（clip-path），阴影只在右下一侧，
+     色调压暗融入背景，无白色描边；sq1~sq3 同样撕边、阴影在底部
+     主图与 sq1~sq3 均可点击弹窗放大
+     ========================================================================= -->
+<section class="screen thanks-screen" id="page7">
+    <div class="thanks-block">
+        <div class="thanks-photo-wrap">
+            <img class="thanks-photo" src="浪尖儿社区.jpg" alt="浪尖儿社区" width="720" height="500"
+                 data-lb-group="thanks" data-lb-cap="浪尖儿社区">
+            <img class="sq sq-1" src="sq1.png" alt="浪尖儿社区花絮 1" width="290" height="200"
+                 data-lb-group="thanks" data-lb-cap="浪尖儿社区 · 花絮 1">
+            <img class="sq sq-2" src="sq2.png" alt="浪尖儿社区花絮 2" width="290" height="200"
+                 data-lb-group="thanks" data-lb-cap="浪尖儿社区 · 花絮 2">
+            <img class="sq sq-3" src="sq3.png" alt="浪尖儿社区花絮 3" width="290" height="200"
+                 data-lb-group="thanks" data-lb-cap="浪尖儿社区 · 花絮 3">
+        </div>
+
+        <div class="thanks-text">
+            <p class="eyebrow">THANKS</p>
+            <p class="thanks-top">一个人走得快，一群人走得远</p>
+            <p class="thanks-body">在水产医学与 AI 跨界探索的道路上，是浪尖社区为我提供了最前沿的技术视野与最温暖的陪伴。也感恩优秀同频的圈层，教会我提升自我，助力我大学稳步前行。感谢浪尖社区的陪伴与支持，是你们让我得以将天马行空的想象，化作真实可见的作品。</p>
+            <p class="thanks-bottom">保持热爱，顶峰相见</p>
+        </div>
+    </div>
+
+    <span class="folio">07</span>
+</section>
+
+<!-- =========================================================================
+     第 8 页｜留言板
+     item.png 放在标题右侧，flex 间距 40px，绝不与「留言板」三字重叠
+     4 条示例留言 + mailto 表单（不使用任何第三方后端）
+     ========================================================================= -->
+<section class="screen" id="page8">
+    <div class="wrap">
+
+        <div class="board-head">
+            <div>
+                <p class="eyebrow">GUESTBOOK</p>
+                <h2 class="sec-title">留言<em>板</em></h2>
+            </div>
+            <img class="deco-p8" src="item.png" alt="" aria-hidden="true" width="142" height="142">
+        </div>
+
+        <div class="board-grid">
+
+            <!-- 左：示例留言（虚假数据，仅供展示） -->
+            <div>
+                <div class="board-samples">
+                    <div class="msg-note">
+                        <div class="msg-head"><p class="msg-name">小陈不熬夜</p><p class="msg-time">2026.08.20</p></div>
+                        <p class="msg-text">从水产跨到 AI，这个探索方向太有意思了，加油！</p>
+                    </div>
+                    <div class="msg-note">
+                        <div class="msg-head"><p class="msg-name">AI学习者小林</p><p class="msg-time">2026.08.21</p></div>
+                        <p class="msg-text">番茄钟我试玩了，很流畅，大一就能做出这个真的很强。</p>
+                    </div>
+                    <div class="msg-note">
+                        <div class="msg-head"><p class="msg-name">浪尖儿小助手</p><p class="msg-time">2026.08.22</p></div>
+                        <p class="msg-text">常怀不足，日日进步，共勉！</p>
+                    </div>
+                    <div class="msg-note">
+                        <div class="msg-head"><p class="msg-name">路过的小王</p><p class="msg-time">2026.08.23</p></div>
+                        <p class="msg-text">PPT 和 AI 能力都拿得出手，未来可期。</p>
+                    </div>
+                </div>
+                <p class="sample-tip">以上为展示示例，欢迎在下方留下你的真实留言</p>
+            </div>
+
+            <!-- 右：mailto 表单，三项全部必填 -->
+            <form class="board-form" id="guestbook-form" novalidate>
+                <input type="text"  id="gb-name"  maxlength="20" placeholder="你的昵称" autocomplete="off">
+                <input type="email" id="gb-email"                placeholder="你的邮箱" autocomplete="off">
+                <textarea id="gb-message" maxlength="500" placeholder="想说的话……"></textarea>
+                <button type="submit" class="sticker-btn" style="align-self:flex-start">寄出留言 →</button>
+                <p class="form-status" id="form-status"></p>
+                <p class="mail-tip">⚠️ 提交留言需要电脑上装有邮箱客户端（如 Outlook、QQ 邮箱等），否则无法发送</p>
+            </form>
+
+        </div>
+    </div>
+
+    <span class="folio">08</span>
+</section>
+
+</main>
+
+<!-- =========================================================================
+     弹窗：全站所有可点击图片共用
+     ========================================================================= -->
+<div class="lightbox" id="lightbox">
+    <button type="button" class="lb-btn lb-prev" aria-label="上一张">‹</button>
+    <img id="lightbox-img" src="" alt="">
+    <button type="button" class="lb-btn lb-next" aria-label="下一张">›</button>
+    <button type="button" class="lb-btn lb-close" aria-label="关闭">×</button>
+    <div class="lb-meta">
+        <p class="lb-cap" id="lightbox-cap"></p>
+        <p class="lb-index" id="lightbox-index"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
