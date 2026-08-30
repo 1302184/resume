@@ -30,11 +30,6 @@
     </div>
 </header>
 
-<!-- =========================================================================
-     竖向时间轴：项目组件在上，对应 PPT 堆叠紧跟正下方
-     iframe 试玩窗口 480×320（移动端 100% 宽 × 240px 高），均带 sandbox
-     PPT 使用全部图片：坦克大战 ppt-tank1~11、番茄钟 f1~f5
-     ========================================================================= -->
 <section class="sub-section">
     <div class="wrap">
         <div class="timeline">
@@ -43,12 +38,10 @@
             <div class="tl-node">
                 <p class="tl-step">PRACTICE 01</p>
                 <h2 class="tl-title">经典2D网页游戏复刻：坦克大战</h2>
-                <p class="tl-desc">通过复刻经典游戏，进一步锻炼与 AI 大模型结对编程的能力。针对游戏中的网格系统与基础碰撞检测，通过向 AI 工具精准描述需求，逐步调试并修复代码 Bug，实现核心游戏机制；掌握了 Web 端基础的 DOM 操作与事件监听原理，积累了项目排错经验。</p>
+                <p class="tl-desc">通过复刻经典游戏，进一步锻炼与 AI 大模型结短编程的能力。针对游戏中的网格系统与基础碰撞检测，通过向 AI 工具精准描述需求，逐步调试并修复代码 Bug，实现核心游戏机制；掌握了 Web 端基础的 DOM 操作与事件监听原理，积累了项目排错经验。</p>
 
                 <div class="play-frame">
-                    <iframe src="https://1302184.github.io/tank-games/"
-                            sandbox="allow-scripts allow-same-origin"
-                            title="坦克大战试玩"></iframe>
+                    <iframe src="https://1302184.github.io/tank-games/" sandbox="allow-scripts allow-same-origin" title="坦克大战试玩" loading="lazy"></iframe>
                     <p class="preview-cap">坦克大战 · 内嵌试玩</p>
                 </div>
 
@@ -56,23 +49,17 @@
                     <a class="text-link" href="https://1302184.github.io/tank-games/" target="_blank" rel="noopener">全屏访问项目 ↗</a>
                 </p>
 
-                <!-- 🔴 对应 PPT 堆叠：11 张 -->
+                <!-- 🔴 对应 PPT 堆叠：已精简为 5 张 -->
                 <div class="ppt-stack-wrap">
-                    <p class="ppt-stack-label">PROJECT DECK · 11 PAGES</p>
+                    <p class="ppt-stack-label">PROJECT DECK · 5 PAGES</p>
                     <div class="ppt-stack" data-group="sub-tank">
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank1.jpg"  alt="坦克大战 PPT 第1页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank2.jpg"  alt="坦克大战 PPT 第2页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank3.jpg"  alt="坦克大战 PPT 第3页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank4.jpg"  alt="坦克大战 PPT 第4页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank5.jpg"  alt="坦克大战 PPT 第5页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank6.jpg"  alt="坦克大战 PPT 第6页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank7.jpg"  alt="坦克大战 PPT 第7页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank8.jpg"  alt="坦克大战 PPT 第8页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank9.jpg"  alt="坦克大战 PPT 第9页"  width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank10.jpg" alt="坦克大战 PPT 第10页" width="464" height="304"></div>
-                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank11.jpg" alt="坦克大战 PPT 第11页" width="464" height="304"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank1.jpg"  alt="坦克大战 PPT 第1页"  width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank2.jpg"  alt="坦克大战 PPT 第2页"  width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank3.jpg"  alt="坦克大战 PPT 第3页"  width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank4.jpg"  alt="坦克大战 PPT 第4页"  width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="坦克大战 · 项目讲解 PPT"><img src="ppt-tank5.jpg"  alt="坦克大战 PPT 第5页"  width="464" height="304" loading="lazy"></div>
                     </div>
-                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头可翻遍 11 页</p>
+                    <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头可翻看 5 页</p>
                 </div>
             </div>
 
@@ -83,9 +70,7 @@
                 <p class="tl-desc">针对日常学习中的专注力管理需求，从零开始设计并部署一款极简版网页番茄钟。在缺乏深厚编程基础的情况下，运用大模型 AI 工具辅助生成前端代码（HTML/CSS/JS），理解并跑通了倒计时逻辑与页面交互；独立完成代码托管，并成功使用 GitHub Pages 实现项目的自动化部署与公网访问，建立了个人的首个完整开发链路认知。</p>
 
                 <div class="play-frame">
-                    <iframe src="https://1302184.github.io/-fanqiezhong/"
-                            sandbox="allow-scripts allow-same-origin"
-                            title="番茄钟试玩"></iframe>
+                    <iframe src="https://1302184.github.io/-fanqiezhong/" sandbox="allow-scripts allow-same-origin" title="番茄钟试玩" loading="lazy"></iframe>
                     <p class="preview-cap">番茄钟 · 内嵌试玩</p>
                 </div>
 
@@ -97,11 +82,11 @@
                 <div class="ppt-stack-wrap">
                     <p class="ppt-stack-label">PROJECT DECK · 5 PAGES</p>
                     <div class="ppt-stack" data-group="sub-tomato">
-                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f1.jpg" alt="番茄钟 PPT 第1页" width="464" height="304"></div>
-                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f2.jpg" alt="番茄钟 PPT 第2页" width="464" height="304"></div>
-                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f3.jpg" alt="番茄钟 PPT 第3页" width="464" height="304"></div>
-                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f4.jpg" alt="番茄钟 PPT 第4页" width="464" height="304"></div>
-                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f5.jpg" alt="番茄钟 PPT 第5页" width="464" height="304"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f1.jpg" alt="番茄钟 PPT 第1页" width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f2.jpg" alt="番茄钟 PPT 第2页" width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f3.jpg" alt="番茄钟 PPT 第3页" width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f4.jpg" alt="番茄钟 PPT 第4页" width="464" height="304" loading="lazy"></div>
+                        <div class="shot" data-cap="番茄钟 · 项目讲解 PPT"><img src="f5.jpg" alt="番茄钟 PPT 第5页" width="464" height="304" loading="lazy"></div>
                     </div>
                     <p class="ppt-stack-hint">点击任意一张放大，弹窗内左右箭头翻页</p>
                 </div>
