@@ -421,9 +421,6 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 1000px) { .board-grid { grid-template-columns: 1fr; } }
 @media (max-width: 620px) { .board-samples { grid-template-columns: 1fr; } }
 
-/* 手机端留言板存在交互 bug，直接隐藏整个第 8 页，不影响其余页面滚动 */
-@media (max-width: 768px) { #page8 { display: none; } }
-
 /* =========================================================
    14｜弹窗
    ========================================================= */
@@ -450,7 +447,7 @@ button, input, textarea { font-family: inherit; }
 .sub-section { padding: 70px 0; }
 
 .honor-list { display: flex; flex-direction: column; gap: 46px; }
-.honor-item { display: grid; grid-template-columns: 380px 1fr; gap: 38px; align-items: center; content-visibility: auto; contain-intrinsic-size: 0 320px; }
+.honor-item { display: grid; grid-template-columns: 380px 1fr; gap: 38px; align-items: center; }
 .honor-item:nth-child(even) { grid-template-columns: 1fr 380px; }
 .honor-item:nth-child(even) .honor-pic { order: 2; }
 .honor-pic { background: var(--navy-card); padding: 10px 10px 13px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,.13), var(--shadow-m); transform: rotate(-1.1deg); cursor: pointer; transition: transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease; }
