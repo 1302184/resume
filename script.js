@@ -1,5 +1,5 @@
 /* =========================================================================
-   孙嘉麾 · 个人作品集简历网站 —— 主脚本
+   孙嘉麾 · 个人作品集简历网站 —— 完整主脚本
    ========================================================================= */
 
 (function () {
@@ -44,7 +44,7 @@
     ];
 
     function initStacks() {
-        var mobile = window.matchMedia('(max-width: 768px)').matches;
+        var mobile = window.innerWidth <= 768;
         var offScale = mobile ? 0.5 : 1;
         var rotScale = mobile ? 0.75 : 1;
 
@@ -112,20 +112,44 @@
         }
     }
 
-    /* 模块 D｜弹窗 */
+    /* 模块 D｜弹窗及防白屏机制 */
     var lb = document.getElementById('lightbox');
     var lbImg = document.getElementById('lightbox-img');
     var lbCap = document.getElementById('lightbox-cap');
     var lbIdx = document.getElementById('lightbox-index');
     var lbList = [], lbPos = 0;
 
+    var lbLoader = document.getElementById('lb-loader');
+    if (!lbLoader && lb) {
+        lbLoader = document.createElement('div');
+        lbLoader.id = 'lb-loader';
+        lbLoader.innerHTML = '<div class="spinner"></div><p>加载中...</p>';
+        lb.appendChild(lbLoader);
+    }
+
     function show(i) {
         if (!lbList.length) return;
         lbPos = (i + lbList.length) % lbList.length;
-        lbImg.src = lbList[lbPos].src;
+        
+        if (lbLoader) lbLoader.style.display = 'flex';
+        lbImg.style.opacity = '0';
         lbImg.alt = lbList[lbPos].cap || '';
         lbCap.textContent = lbList[lbPos].cap || '';
         lbIdx.textContent = (lbPos + 1) + ' / ' + lbList.length;
+
+        var tempImg = new Image();
+        tempImg.onload = function() {
+            lbImg.src = lbList[lbPos].src;
+            if (lbLoader) lbLoader.style.display = 'none';
+            lbImg.style.opacity = '1';
+        };
+        tempImg.onerror = function() {
+            lbImg.src = '';
+            lbImg.alt = '图片加载失败';
+            if (lbLoader) lbLoader.style.display = 'none';
+            lbImg.style.opacity = '1';
+        };
+        tempImg.src = lbList[lbPos].src;
     }
 
     function openLightbox(group, index) {
@@ -230,9 +254,7 @@
         });
     }
 
-    /* =====================================================================
-       模块 H｜第 8 页 mailto 留言表单 (含手机端复制降级及键盘防挡)
-       ===================================================================== */
+    /* 模块 H｜第 8 页 mailto 留言表单降级 */
     var gbForm = document.getElementById('guestbook-form');
     if (gbForm) {
         var TO = 'sunjiahui0313@qq.com';
@@ -242,7 +264,6 @@
         var fText = document.getElementById('gb-message');
         var subBtn = gbForm.querySelector('button[type="submit"]');
 
-        // 手机端防键盘遮挡：输入框聚焦时自动居中滚动
         [fName, fMail, fText].forEach(function(input) {
             input.addEventListener('focus', function() {
                 if (window.innerWidth <= 768) {
@@ -273,9 +294,7 @@
             }
 
             if (window.innerWidth <= 768) {
-                // 移动端：阻断 mailto，执行复制
                 var originalText = subBtn.textContent;
-                
                 function fallbackCopy(text) {
                     var ta = document.createElement('textarea');
                     ta.value = text;
@@ -288,7 +307,6 @@
                     document.body.removeChild(ta);
                     return res ? Promise.resolve() : Promise.reject();
                 }
-
                 var copyPromise = (navigator.clipboard && window.isSecureContext) 
                     ? navigator.clipboard.writeText(TO).catch(function() { return fallbackCopy(TO); }) 
                     : fallbackCopy(TO);
@@ -297,22 +315,15 @@
                     subBtn.textContent = '邮箱已复制';
                     status.textContent = '已复制邮箱，请打开邮件 App 发送留言';
                     status.style.color = '#ffffff';
-                    setTimeout(function() {
-                        subBtn.textContent = originalText;
-                    }, 1500);
+                    setTimeout(function() { subBtn.textContent = originalText; }, 1500);
                 }).catch(function() {
                     status.textContent = '复制失败，请手动长按下方邮箱复制';
                     status.style.color = '#ff94b4';
                 });
-
             } else {
-                // PC端：传统 mailto 调起
                 var subject = '个人主页留言 · 来自 ' + name;
                 var body = '昵称：' + name + '\n邮箱：' + mail + '\n\n留言内容：\n' + text;
-                window.location.href = 'mailto:' + TO +
-                    '?subject=' + encodeURIComponent(subject) +
-                    '&body=' + encodeURIComponent(body);
-
+                window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
                 status.textContent = '已调起邮箱客户端，请在客户端中点击发送';
                 status.style.color = '#ffffff';
                 gbForm.reset();
@@ -320,9 +331,46 @@
         });
     }
 
+    /* 模块 I｜移动端图片加载智能优化 */
+    function optimizeMobileImages() {
+        if (window.innerWidth > 768) return; 
+
+        var lazyImgs = document.querySelectorAll('#page3 img, #page4 img, #page6 img, #page7 img');
+        lazyImgs.forEach(function(img) {
+            var src = img.getAttribute('src') || '';
+            if (!src.includes('head-full.png') && !src.includes('item1.png') && !src.includes('item2.png') && !src.includes('item3.png')) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var img = entry.target;
+                        var tempImg = new Image();
+                        tempImg.src = img.src; 
+                        observer.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '300px' });
+
+            var preloadTargets = document.querySelectorAll('.ppt-stack img, .sj, .sq, .thanks-photo, .cert-card img');
+            preloadTargets.forEach(function(img) {
+                observer.observe(img);
+            });
+        }
+    }
+
     /* 启动 */
     bindImgErrors();
     initStacks();
     initGroups();
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', optimizeMobileImages);
+    } else {
+        optimizeMobileImages();
+    }
 
 })();
