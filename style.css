@@ -260,7 +260,7 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 900px) { .ppt-stack, .ppt-stack .shot { width: 100%; height: 240px; } }
 
 /* =========================================================
-   10｜第 5 页 自我介绍页 (加入兴趣爱好、强化拼贴)
+   10｜第 5 页 自我介绍页
    ========================================================= */
 #page5 { padding-bottom: 120px; }
 .about-wrap { display: flex; flex-direction: column; justify-content: center; min-height: 70vh; }
@@ -308,7 +308,7 @@ button, input, textarea { font-family: inherit; }
 }
 
 /* =========================================================
-   11｜第 6 页 荣誉墙（软木板静态错落排版）
+   11｜第 6 页 荣誉墙
    ========================================================= */
 .corkboard-grid {
     display: grid;
@@ -420,9 +420,6 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 1000px) { .board-grid { grid-template-columns: 1fr; } }
 @media (max-width: 620px) { .board-samples { grid-template-columns: 1fr; } }
 
-/* 手机端留言板存在交互 bug，直接隐藏整个第 8 页，不影响其余页面滚动 */
-@media (max-width: 768px) { #page8 { display: none; } }
-
 /* =========================================================
    14｜弹窗
    ========================================================= */
@@ -476,9 +473,17 @@ button, input, textarea { font-family: inherit; }
    17｜手机端适配
    ========================================================= */
 @media (max-width: 768px) {
-    /* 👇 新增：手机端加载背景小图 */
+    /* 👇 强化版：强制加载手机端背景小图 */
     body::before {
-        background-image: url('paper-bg-mobile.jpg');
+        content: '' !important;
+        background-image: url('paper-bg-mobile.jpg') !important;
+        background-size: cover !important;
+    }
+    
+    /* 👇 降低手机端 GPU 渲染压力 */
+    .head-icon {
+        animation: none !important; /* 关闭浮动动画 */
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)) !important; /* 降低阴影复杂度 */
     }
     
     #cover { display: none !important; }
@@ -489,6 +494,7 @@ button, input, textarea { font-family: inherit; }
     .sj { width: min(40vw, 200px); } .sq { width: min(40vw, 190px); }
     .thanks-block { gap: 24px; } .thanks-photo { width: 85vw; height: auto; } .thanks-text { text-align: left; }
     .lightbox img { max-width: 90vw; max-height: 70vh; }
+    #page8 { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

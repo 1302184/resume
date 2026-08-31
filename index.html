@@ -92,14 +92,16 @@
                 <img src="item3.png" alt="实践舱" width="232" height="232">
             </a>
 
-            <!-- 优化点：使用 img 原生 srcset 与 sizes 属性，手机端按需加载小图 head-mobile.png -->
-            <img class="head-photo" 
-                 src="head-full.png"
-                 srcset="head-mobile.png 500w, head-full.png 1000w"
-                 sizes="(max-width: 768px) 75vw, 400px"
-                 alt="孙嘉麾" 
-                 width="640" 
-                 height="800">
+            <!-- 终极优化版：使用 picture 强制切断大图加载，并使用 fetchpriority 提升网络优先级 -->
+            <picture>
+                <source media="(max-width: 768px)" srcset="head-mobile.png">
+                <img class="head-photo" 
+                     src="head-full.png" 
+                     alt="孙嘉麾" 
+                     width="640" 
+                     height="800"
+                     fetchpriority="high">
+            </picture>
         </div>
 
     </div>
@@ -153,7 +155,7 @@
 </section>
 
 <!-- =========================================================================
-     第 3 页｜实践舱前置文字页 (加入 loading="lazy")
+     第 3 页｜实践舱前置文字页
      ========================================================================= -->
 <section class="screen lead-screen" id="page3">
     <div class="wrap lead-inner">
@@ -172,7 +174,7 @@
 </section>
 
 <!-- =========================================================================
-     第 4 页｜实践舱 · 项目展示页 (加入 loading="lazy")
+     第 4 页｜实践舱 · 项目展示页
      ========================================================================= -->
 <section class="screen" id="page4">
     <div class="wrap">
@@ -249,7 +251,7 @@
 </section>
 
 <!-- =========================================================================
-     第 5 页｜自我介绍页（重新排版：加入兴趣爱好、强化杂志拼贴感）
+     第 5 页｜自我介绍页
      ========================================================================= -->
 <section class="screen" id="page5">
     <div class="wrap about-wrap">
@@ -320,7 +322,7 @@
 </section>
 
 <!-- =========================================================================
-     第 6 页｜荣誉墙（软木板静态错落排版，零动画，极致性能）
+     第 6 页｜荣誉墙
      ========================================================================= -->
 <section class="screen" id="page6">
     <div class="wrap">
@@ -333,7 +335,6 @@
             <a class="sticker-btn" href="honors.html">查看全部 16 项认证详情 →</a>
         </div>
 
-        <!-- ===== 静态错落网格 ===== -->
         <div class="corkboard-grid">
             <figure class="cert-card" data-lb-group="cert" data-lb-cap="阿里达摩院 · 高级AI训练师证书">
                 <img src="13.jpg" alt="高级AI训练师" width="260" height="180" loading="lazy">
@@ -381,7 +382,7 @@
 </section>
 
 <!-- =========================================================================
-     第 7 页｜特别鸣谢 (加入 loading="lazy")
+     第 7 页｜特别鸣谢
      ========================================================================= -->
 <section class="screen thanks-screen" id="page7">
     <div class="thanks-block">
