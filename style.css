@@ -420,6 +420,9 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 1000px) { .board-grid { grid-template-columns: 1fr; } }
 @media (max-width: 620px) { .board-samples { grid-template-columns: 1fr; } }
 
+/* 手机端留言板存在交互 bug，直接隐藏整个第 8 页，不影响其余页面滚动 */
+@media (max-width: 768px) { #page8 { display: none; } }
+
 /* =========================================================
    14｜弹窗
    ========================================================= */
@@ -473,17 +476,17 @@ button, input, textarea { font-family: inherit; }
    17｜手机端适配
    ========================================================= */
 @media (max-width: 768px) {
-    /* 👇 强化版：强制加载手机端背景小图 */
+    /* 强制加载手机端背景小图 */
     body::before {
         content: '' !important;
         background-image: url('paper-bg-mobile.jpg') !important;
         background-size: cover !important;
     }
     
-    /* 👇 降低手机端 GPU 渲染压力 */
+    /* 降低手机端 GPU 渲染压力 */
     .head-icon {
-        animation: none !important; /* 关闭浮动动画 */
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)) !important; /* 降低阴影复杂度 */
+        animation: none !important;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4)) !important;
     }
     
     #cover { display: none !important; }
