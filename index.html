@@ -92,11 +92,14 @@
                 <img src="item3.png" alt="实践舱" width="232" height="232">
             </a>
 
-            <!-- 优化点：使用 picture 标签，手机端按需加载小图 head-mobile.png，彻底告别卡顿 -->
-            <picture>
-                <source media="(max-width: 768px)" srcset="head-mobile.png">
-                <img class="head-photo" src="head-full.png" alt="孙嘉麾" width="640" height="800">
-            </picture>
+            <!-- 优化点：使用 img 原生 srcset 与 sizes 属性，手机端按需加载小图 head-mobile.png -->
+            <img class="head-photo" 
+                 src="head-full.png"
+                 srcset="head-mobile.png 500w, head-full.png 1000w"
+                 sizes="(max-width: 768px) 75vw, 400px"
+                 alt="孙嘉麾" 
+                 width="640" 
+                 height="800">
         </div>
 
     </div>

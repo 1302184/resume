@@ -4,7 +4,6 @@
    配色严格三色：深藏蓝 / 浅蜜桃粉 / 白
    index.html / honors.html / practice.html 共用
    ========================================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
 
 /* =========================================================
    00｜配色与基础变量
@@ -46,7 +45,7 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--navy);
     color: var(--white);
-    font-family: 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family: system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
     font-size: 15px;
     line-height: 1.8;
     overflow-x: hidden;
@@ -421,6 +420,9 @@ button, input, textarea { font-family: inherit; }
 @media (max-width: 1000px) { .board-grid { grid-template-columns: 1fr; } }
 @media (max-width: 620px) { .board-samples { grid-template-columns: 1fr; } }
 
+/* 手机端留言板存在交互 bug，直接隐藏整个第 8 页，不影响其余页面滚动 */
+@media (max-width: 768px) { #page8 { display: none; } }
+
 /* =========================================================
    14｜弹窗
    ========================================================= */
@@ -447,7 +449,7 @@ button, input, textarea { font-family: inherit; }
 .sub-section { padding: 70px 0; }
 
 .honor-list { display: flex; flex-direction: column; gap: 46px; }
-.honor-item { display: grid; grid-template-columns: 380px 1fr; gap: 38px; align-items: center; }
+.honor-item { display: grid; grid-template-columns: 380px 1fr; gap: 38px; align-items: center; content-visibility: auto; contain-intrinsic-size: 0 320px; }
 .honor-item:nth-child(even) { grid-template-columns: 1fr 380px; }
 .honor-item:nth-child(even) .honor-pic { order: 2; }
 .honor-pic { background: var(--navy-card); padding: 10px 10px 13px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,.13), var(--shadow-m); transform: rotate(-1.1deg); cursor: pointer; transition: transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease; }
@@ -474,6 +476,11 @@ button, input, textarea { font-family: inherit; }
    17｜手机端适配
    ========================================================= */
 @media (max-width: 768px) {
+    /* 👇 新增：手机端加载背景小图 */
+    body::before {
+        background-image: url('paper-bg-mobile.jpg');
+    }
+    
     #cover { display: none !important; }
     body { font-size: 14px; line-height: 1.7; overflow-x: hidden; }
     .nav { padding: 14px 16px; } .nav-menu { flex-wrap: wrap; justify-content: center; row-gap: 6px; }
